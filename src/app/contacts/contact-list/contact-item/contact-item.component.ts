@@ -16,6 +16,5 @@ export class ContactItemComponent implements OnInit {
 
   onSelect() {
     this.selectedContact.emit();
-    console.log('contact has been clicked');
   }
 }

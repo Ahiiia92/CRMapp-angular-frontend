@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Property} from "./property.model";
 
 @Component({
   selector: 'app-properties',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./properties.component.sass']
 })
 export class PropertiesComponent implements OnInit {
+  @Input() selectedProperty: Property;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,16 +1,16 @@
 <div class="row">
   <div class="col-sm-12">
-    <img src="" alt="" class="img-responsive">
+    <img [src]="property.imagePath" alt="" class="card-img">
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12">
     <div class="d-flex justify-content-between">
-      <h1>Property Name</h1>
-      <h2>Prix</h2>
+      <h1>{{ property.name }}</h1>
+      <h2>{{ property.price }} €</h2>
     </div>
-    <h3>Property Address</h3>
+    <h3>{{ property.address }}</h3>
   </div>
 </div>
 

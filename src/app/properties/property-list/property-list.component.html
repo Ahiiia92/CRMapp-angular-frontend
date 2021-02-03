@@ -9,6 +9,7 @@
     <app-property-item
       *ngFor="let propertyElement of properties"
       [property]="propertyElement"
+      (selectedProperty)="onSelectedProperty(propertyElement)"
     ></app-property-item>
   </div>
 </div>
