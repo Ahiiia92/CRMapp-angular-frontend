@@ -6,18 +6,9 @@
 <hr>
 <div class="row">
   <div class="col-sm-12 list-group">
-    <a href="#" class="list-group-item list-group-item-action clearfix d-flex justify-content-between align-items-center" *ngFor="let property of properties">
-      <div class="pull-left">
-        <div class="d-flex justify-content-between">
-          <h4 class="list-group-item-heading">{{ property.name }}</h4>
-          <p class="list-group-item-text mb-1">{{ property.price }}</p>
-        </div>
-        <p class="list-group-item-text mb-1">{{ property.address }}</p>
-      </div>
-      <span class="pull-right">
-        <img [src]="property.imagePath" alt="" class="img-responsive" style="max-height: 50px;">
-      </span>
-    </a>
-    <app-property-item></app-property-item>
+    <app-property-item
+      *ngFor="let propertyElement of properties"
+      [property]="propertyElement"
+    ></app-property-item>
   </div>
 </div>
