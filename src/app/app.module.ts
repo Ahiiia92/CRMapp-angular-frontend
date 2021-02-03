@@ -12,6 +12,7 @@ import { PropertyItemComponent } from './properties/property-list/property-item/
 import { ContactEditComponent } from './contacts/contact-list/contact-edit/contact-edit.component';
 import { PropertiesComponent } from './properties/properties.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     PropertyItemComponent,
     ContactEditComponent,
     PropertiesComponent,
-    ContactsComponent
+    ContactsComponent,
+    ContactItemComponent
   ],
   imports: [
     BrowserModule,

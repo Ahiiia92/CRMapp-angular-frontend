@@ -8,7 +8,6 @@ import {Contact} from "../../shared/contact.model";
 })
 export class ContactListComponent implements OnInit {
   collapsed = false;
-  displayed = false;
   contacts: Contact[] = [
     new Contact('Marie', "Dujardin", '46 rue de la Paix, 95483 Paris', 'Architect')
   ];

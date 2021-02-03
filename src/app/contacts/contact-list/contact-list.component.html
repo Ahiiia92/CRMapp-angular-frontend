@@ -6,20 +6,10 @@
 <hr>
 <div class="row">
   <div class="col-sm-12 list-group">
-    <a href="#"
-       class="list-group-item list-group-item-action clearfix d-flex justify-content-between align-items-center mb-2 mt-2"
-       (click)="displayed = !displayed"
-       *ngFor="let c of contacts">
-      <div class="pull-left">
-        <div class="d-flex justify-content-between">
-          <h4 class="list-group-item-heading">{{ c.firstname }} {{ c.lastname }}</h4>
-        </div>
-        <p class="list-group-item-text mb-1">{{ c.address }}</p>
-      </div>
-      <span class="pull-right">
-        <p class="list-group-item-text mb-1">{{ c.job }}</p>
-      </span>
-    </a>
+    <app-contact-item
+      *ngFor="let contactElement of contacts"
+      [contact]="contactElement">
+    </app-contact-item>
     <button class="btn btn-info" (click)="collapsed = !collapsed">Edit</button>
     <app-contact-edit *ngIf="collapsed"></app-contact-edit>
   </div>
