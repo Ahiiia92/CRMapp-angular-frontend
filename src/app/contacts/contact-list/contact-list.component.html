@@ -8,7 +8,8 @@
   <div class="col-sm-12 list-group">
     <app-contact-item
       *ngFor="let contactElement of contacts"
-      [contact]="contactElement">
+      [contact]="contactElement"
+    (selectedContact)="onContactSelected(contactElement)">
     </app-contact-item>
     <button class="btn btn-info" (click)="collapsed = !collapsed">Edit</button>
     <app-contact-edit *ngIf="collapsed"></app-contact-edit>

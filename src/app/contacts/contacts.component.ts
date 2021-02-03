@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Contact} from "../shared/contact.model";
 
 @Component({
   selector: 'app-contacts',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacts.component.sass']
 })
 export class ContactsComponent implements OnInit {
+  @Input() selectedContact: Contact;
   constructor() { }
 
   ngOnInit(): void {

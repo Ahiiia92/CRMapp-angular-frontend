@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, EventEmitter, OnInit, Output} from '@angular/core';
 import {Contact} from "../../../shared/contact.model";
 
 @Component({
@@ -7,13 +7,15 @@ import {Contact} from "../../../shared/contact.model";
   styleUrls: ['./contact-item.component.sass']
 })
 export class ContactItemComponent implements OnInit {
-  displayed = false;
   @Input() contact: Contact;
+  @Output() selectedContact = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-
+  onSelect() {
+    this.selectedContact.emit();
+    console.log('contact has been clicked');
+  }
 }
