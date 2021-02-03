@@ -9,7 +9,8 @@ import {Contact} from "../../shared/contact.model";
 export class ContactListComponent implements OnInit {
   collapsed = false;
   contacts: Contact[] = [
-    new Contact('Marie', "Dujardin", '46 rue de la Paix, 95483 Paris', 'Architect')
+    new Contact('Marie', "Dujardin", '46 rue de la Paix, 95483 Paris', 'Architect'),
+    new Contact('Aya', "Dtzéch", '5 avenue MLK, 38920 Montpellier', 'Surgeon')
   ];
   @Output() contactWasSelected = new EventEmitter<Contact>();
 
