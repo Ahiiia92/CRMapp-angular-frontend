@@ -13,6 +13,8 @@ import { ContactEditComponent } from './contacts/contact-list/contact-edit/conta
 import { PropertiesComponent } from './properties/properties.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
+import {ContactService} from "./shared/services/contact.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { ContactItemComponent } from './contacts/contact-list/contact-item/conta
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
