@@ -10,7 +10,7 @@
       <h1>{{ contact.firstname }} {{ contact.lastname }}</h1>
       <h2>{{ contact.job }}</h2>
     </div>
-    <h3>{{ contact.address }}</h3>
+    <h3>{{ contact.streetname }} {{ contact.zipCode }} {{ contact.city }}</h3>
   </div>
 </div>
 
@@ -32,6 +32,8 @@
 <div class="row">
   <div class="col-sm-12">
     Notes
+    Email: <p>{{ contact.email }}</p>
+    Profession: <p>{{ contact.job }}</p>
   </div>
 </div>
 
