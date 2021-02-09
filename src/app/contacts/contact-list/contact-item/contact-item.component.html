@@ -5,7 +5,8 @@
     <div class="d-flex justify-content-between">
       <h4 class="list-group-item-heading">{{ contact.firstname }} {{ contact.lastname }}</h4>
     </div>
-    <p class="list-group-item-text mb-1">{{ contact.address }}</p>
+    <p class="list-group-item-text mb-1">{{ contact.streetname }} {{ contact.zipCode }} {{ contact.city }}</p>
+    <p class="list-group-item-text mb-1">{{ contact.email }}</p>
   </div>
   <span class="pull-right">
         <p class="list-group-item-text mb-1">{{ contact.job }}</p>

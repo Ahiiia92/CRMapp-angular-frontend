@@ -22,10 +22,13 @@ export class ContactListComponent implements OnInit {
 
   // Link with BE
   contacts: Contact[];
+
   constructor(private contactService: ContactService) {
   }
+
   ngOnInit() {
     this.contactService.getAll().subscribe(data => {
+      console.log(data);
       this.contacts = data;
     })
   }
