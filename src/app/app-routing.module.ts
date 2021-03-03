@@ -1,7 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {HomepageComponent} from "./homepage/homepage.component";
+import {ContactsComponent} from "./contacts/contacts.component";
+import {ContactStartComponent} from "./contacts/contact-start/contact-start.component";
+import {ContactEditComponent} from "./contacts/contact-edit/contact-edit.component";
+import {ContactDetailsComponent} from "./contacts/contact-details/contact-details.component";
+import {PropertiesComponent} from "./properties/properties.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: HomepageComponent, pathMatch: 'full' },
+  { path: 'contacts', component: ContactsComponent, children: [
+      { path: '', component: ContactStartComponent },
+      { path: 'new', component: ContactEditComponent },
+      { path: ':id', component: ContactDetailsComponent },
+      { path: ':id/edit', component: ContactEditComponent}
+    ] },
+  { path: 'properties', component: PropertiesComponent },
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: 'not-found'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

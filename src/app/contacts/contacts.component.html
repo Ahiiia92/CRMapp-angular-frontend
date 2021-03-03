@@ -5,12 +5,6 @@
     ></app-contact-list>
   </div>
   <div class="col-12 mt-2 mt-lg-0 col-md-7 col-sm-12">
-    <app-contact-details
-      *ngIf="selectedContact; else infoText"
-      [contact]="selectedContact"
-    ></app-contact-details>
-    <ng-template #infoText>
-      <div class="alert-info p-2">Sélectionner un contact</div>
-    </ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Contact} from "../contact.model";
+import {environment} from "../../../environments/environment";
 
 @Injectable(
 //   {
@@ -9,17 +10,29 @@ import {Contact} from "../contact.model";
 // }
 )
 export class ContactService {
-  private contactsUrl: string;
+  private baseUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) {
-    this.contactsUrl = 'http://localhost:8088/api/v1/contacts';
+    this.baseUrl = 'http://localhost:8088/api/v1/contacts';
   }
 
-  public getAll(): Observable<Contact[]> {
-    return this.http.get<Contact[]>(this.contactsUrl);
+  getAll(): Observable<Contact[]> {
+    return this.http.get<Contact[]>(`${this.baseUrl}`);
   }
 
-  public save(contact: Contact) {
-    this.http.post<Contact>(this.contactsUrl, contact);
+  show(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  save(contact: Contact) {
+    return this.http.post<Contact>(`${this.baseUrl}`, contact);
+  }
+
+  update(id: number, contact: Contact) {
+    return this.http.put<Contact>(`${this.baseUrl}/${id}`, contact);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text'});
   }
 }

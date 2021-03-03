@@ -8,13 +8,13 @@
     </div>
     <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
       <ul class="nav navbar-nav mr-auto">
-        <li class="nav-item"><a href="#" class="nav-link" (click)="onSelect('contact')">Contacts</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" (click)="onSelect('property')">Properties</a></li>
+        <li class="nav-item"><a [routerLink]="['contacts']" [routerLinkActive]="'active'" class="nav-link" >Contacts</a></li>
+        <li class="nav-item"><a [routerLink]="['properties']" [routerLinkActive]="'active'"class="nav-link" >Properties</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" (click)="show = !show">
           <a href="#" class="nav-link dropdown-toggle" role="button">Manage<span class="ui-icon-caret-1-e"></span></a>
-          <div class="dropdown-menu" (click)="collapsed = !collapsed">
+          <div class="dropdown-menu" [class.show]="show">
             <a href="#" class="dropdown-item">Save Data</a>
             <a href="#" class="dropdown-item">Fetch Data</a>
           </div>

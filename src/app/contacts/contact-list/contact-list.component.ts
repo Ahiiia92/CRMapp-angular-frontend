@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Contact} from "../../shared/contact.model";
 import {ContactService} from "../../shared/services/contact.service";
+import {Observable} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-contact-list',
@@ -21,20 +23,27 @@ export class ContactListComponent implements OnInit {
   // }
 
   // Link with BE
-  contacts: Contact[];
+  contacts: Observable<Contact[]>;
 
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService,
+              private router: Router,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.contactService.getAll().subscribe(data => {
-      console.log(data);
-      this.contacts = data;
-    })
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.contacts = this.contactService.getAll();
   }
 
   onContactSelected(contact: Contact) {
     this.contactWasSelected.emit(contact);
     console.log('Contact was been selected! Contact-list Component');
+  }
+
+  onNewContact() {
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 }
