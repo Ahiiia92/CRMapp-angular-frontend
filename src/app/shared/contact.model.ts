@@ -4,10 +4,8 @@ export class Contact {
   zipCode: string;
   city: string;
   email: string;
-
-  constructor(public firstname: string,
-              public lastname: string,
-              public address: string,
-              public job:string) {
-  }
+  firstname: string;
+  lastname: string;
+  address: string;
+  job: string;
 }

@@ -1,6 +1,6 @@
-<a href="#"
-   class="list-group-item list-group-item-action clearfix d-flex justify-content-between align-items-center mb-2 mt-2"
-   (click)="onSelect()">
+<a [routerLink]="[contact.id]"
+   [routerLinkActive]="'active'"
+   class="list-group-item list-group-item-action clearfix d-flex justify-content-between align-items-center mb-2 mt-2">
   <div class="pull-left">
     <div class="d-flex justify-content-between">
       <h4 class="list-group-item-heading">{{ contact.firstname }} {{ contact.lastname }}</h4>
@@ -10,5 +10,5 @@
   </div>
   <span class="pull-right">
         <p class="list-group-item-text mb-1">{{ contact.job }}</p>
-      </span>
+  </span>
 </a>

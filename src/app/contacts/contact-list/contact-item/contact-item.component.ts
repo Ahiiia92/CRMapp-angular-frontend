@@ -8,13 +8,9 @@ import {Contact} from "../../../shared/contact.model";
 })
 export class ContactItemComponent implements OnInit {
   @Input() contact: Contact;
-  @Output() selectedContact = new EventEmitter<void>();
+  @Input() identifier: number;
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onSelect() {
-    this.selectedContact.emit();
   }
 }

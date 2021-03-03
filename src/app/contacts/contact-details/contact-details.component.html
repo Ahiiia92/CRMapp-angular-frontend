@@ -16,14 +16,14 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle">
+    <div appDropdown class="btn-group mb-2" id="dropdownBtn" (click)="show = !show">
+      <button class="btn btn-primary dropdown-toggle" aria-expanded="false">
         Manage Contact <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">To Property List</a></li>
-        <li><a href="#">Edit Contact</a></li>
-        <li><a href="#">Delete Contact</a></li>
+      <ul class="dropdown-menu" [class.show]="show">
+        <li class="ml-2"><a href="#">To Property List</a></li>
+        <li class="ml-2"><a (click)="onEditContact()" style="cursor: pointer;">Edit Contact</a></li>
+        <li class="ml-2"><a (click)="onDeleteContact(+contact.id)" style="cursor: pointer;">Delete Contact</a></li>
       </ul>
     </div>
   </div>
@@ -31,7 +31,7 @@
 
 <div class="row">
   <div class="col-sm-12">
-    Notes
+    Notes: <p>####</p>
     Email: <p>{{ contact.email }}</p>
     Profession: <p>{{ contact.job }}</p>
   </div>
