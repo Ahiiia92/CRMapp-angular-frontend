@@ -18,6 +18,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactStartComponent } from './contacts/contact-start/contact-start.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PropertyEditComponent } from './properties/property-edit/property-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ContactItemComponent,
     HomepageComponent,
     ContactStartComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PropertyEditComponent
   ],
   imports: [
     BrowserModule,
