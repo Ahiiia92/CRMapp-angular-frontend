@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-sm-12">
-    <h3 *ngIf="editMode">Update Contact</h3>
-    <h3 *ngIf="!editMode">Create Contact</h3>
+    <h3>{{ editMode ? 'Update Contact' : 'Create Contact'}}</h3>
     <form action="">
       <div class="row">
         <div class="col-sm-6 form-group">

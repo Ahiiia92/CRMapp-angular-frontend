@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8088/api/v1/contacts'
+  apiUrl: 'http://localhost:8088/api/v1/contacts',
+  mapbox: {
+    accessToken: 'pk.eyJ1IjoibWFyb3Vzc2lhIiwiYSI6ImNramlyYzk1bzFjcTAycW83eGd2aWVzcTIifQ.vCTJlBxYKvlYdO4Zvx5CoQ'
+  }
 };
 
 /*
