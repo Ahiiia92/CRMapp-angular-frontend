@@ -19,6 +19,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ContactStartComponent } from './contacts/contact-start/contact-start.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PropertyEditComponent } from './properties/property-edit/property-edit.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PropertyEditComponent } from './properties/property-edit/property-edit.
     HomepageComponent,
     ContactStartComponent,
     PageNotFoundComponent,
-    PropertyEditComponent
+    PropertyEditComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
