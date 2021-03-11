@@ -7,9 +7,11 @@ import {ContactEditComponent} from "./contacts/contact-edit/contact-edit.compone
 import {ContactDetailsComponent} from "./contacts/contact-details/contact-details.component";
 import {PropertiesComponent} from "./properties/properties.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'contacts', component: ContactsComponent, children: [
       { path: '', component: ContactStartComponent },
       { path: 'new', component: ContactEditComponent },
