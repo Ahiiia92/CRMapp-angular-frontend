@@ -1,42 +1,28 @@
-<div class="row">
-  <div class="col-sm-12">
-    <img [src]="property.imagePath" alt="" class="card-img">
-  </div>
-</div>
+<div class="card">
+  <img [src]="property.imagePath" alt="" class="card-img-top">
 
-<div class="row">
-  <div class="col-sm-12">
-    <div class="d-flex justify-content-between">
-      <h1>{{ property.title }}</h1>
-      <h2>{{ property.price }} €</h2>
+    <div class="col-sm-12 mt-2">
+      <div class="d-flex justify-content-between">
+        <h2 class="card-title">{{ property.title }}</h2>
+        <h4 class="card-title">{{ property.price | number }} €</h4>
+      </div>
+      <p class="card-body">{{ property.address }}</p>
+      <p class="card-body">Description</p>
+
+      <div appDropdown class="btn-group mb-2" id="dropdownBtn" (click)="show = !show">
+        <button class="btn btn-primary dropdown-toggle">
+          Manage Property <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" [class.show]="show">
+          <li><a [routerLink]="['/properties']" class="n">To Contact List</a></li>
+          <li><a [routerLink]="['/properties/' + property.id + '/edit']" >Edit Property</a></li>
+          <li><a href="#">Delete Property</a></li>
+        </ul>
+      </div>
     </div>
-    <h3>{{ property.address }}</h3>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle">
-        Manage Property <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">To Contact List</a></li>
-        <li><a href="#">Edit Property</a></li>
-        <li><a href="#">Delete Property</a></li>
-      </ul>
+    <div class="col-sm-12">
+      <app-map></app-map>
     </div>
-  </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-12">
-    Description
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-12">
-    <app-map></app-map>
-  </div>
-</div>
