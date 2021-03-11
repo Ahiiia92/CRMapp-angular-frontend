@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Property} from "../../property.model";
+import {Property} from "../../../shared/models/property.model";
 
 @Component({
   selector: 'app-property-item',
