@@ -8,6 +8,7 @@
     </div>
     <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
       <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item"><a [routerLink]="['dashboard']" [routerLinkActive]="'active'" class="nav-link" >Dashboard</a></li>
         <li class="nav-item"><a [routerLink]="['contacts']" [routerLinkActive]="'active'" class="nav-link" >Contacts</a></li>
         <li class="nav-item"><a [routerLink]="['properties']" [routerLinkActive]="'active'"class="nav-link" >Properties</a></li>
       </ul>
