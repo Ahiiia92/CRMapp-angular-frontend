@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
-import {Contact} from "../shared/contact.model";
+import {Contact} from "../shared/models/contact.model";
 import {ContactService} from "../shared/services/contact.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -11,6 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class DashboardComponent implements OnInit {
   contacts: Observable<Contact[]>
+  @Input() properties
 
   constructor(private contactService: ContactService,
               private reouter: Router,

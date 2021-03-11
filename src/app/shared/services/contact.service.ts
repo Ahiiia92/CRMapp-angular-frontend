@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Contact} from "../contact.model";
+import {Contact} from "../models/contact.model";
 import {environment} from "../../../environments/environment";
 
 @Injectable(
@@ -13,7 +13,7 @@ export class ContactService {
   private baseUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = 'http://localhost:8088/api/v1/contacts';
+    this.baseUrl = `${environment.apiUrl}/contacts`;
   }
 
   getAll(): Observable<Contact[]> {

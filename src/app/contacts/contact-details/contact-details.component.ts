@@ -1,5 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {Contact} from "../../shared/contact.model";
+import {Contact} from "../../shared/models/contact.model";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {ContactService} from "../../shared/services/contact.service";
 import {Subscription} from "rxjs";

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Contact} from "../../shared/contact.model";
+import {Contact} from "../../shared/models/contact.model";
 import {ContactService} from "../../shared/services/contact.service";
 import {Observable} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
