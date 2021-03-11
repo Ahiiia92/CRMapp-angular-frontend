@@ -3,6 +3,8 @@ import {Observable} from "rxjs";
 import {Contact} from "../shared/models/contact.model";
 import {ContactService} from "../shared/services/contact.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Property} from "../shared/models/property.model";
+import {PropertyService} from "../shared/services/property.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +13,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class DashboardComponent implements OnInit {
   contacts: Observable<Contact[]>
-  @Input() properties
+  properties: Observable<Property[]>
 
   constructor(private contactService: ContactService,
+              private propertyService: PropertyService,
               private reouter: Router,
               private route: ActivatedRoute) { }
 
@@ -23,6 +26,8 @@ export class DashboardComponent implements OnInit {
 
   reloadData() {
     this.contacts = this.contactService.getAll();
+    this.properties = this.propertyService.getAll();
+
   }
 
   onNewContact() {

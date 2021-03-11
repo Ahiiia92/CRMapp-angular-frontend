@@ -1,10 +1,10 @@
-<a href="#"
+<a [routerLink]="property.id"
    class="list-group-item list-group-item-action clearfix d-flex justify-content-between align-items-center mb-2 mt-2"
 (click)="onSelect()">
   <div class="pull-left">
     <div class="d-flex justify-content-between">
-      <h4 class="list-group-item-heading">{{ property.name }}</h4>
-      <p class="list-group-item-text mb-1">{{ property.price }} €</p>
+      <h4 class="list-group-item-heading">{{ property.title }}</h4>
+      <p class="list-group-item-text mb-1">{{ property.price | number }} €</p>
     </div>
     <p class="list-group-item-text mb-1">{{ property.address }}</p>
     <p class="list-group-item-text mb-1">{{ property.size }} m2</p>

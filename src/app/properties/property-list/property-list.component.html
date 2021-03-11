@@ -7,7 +7,7 @@
 <div class="row">
   <div class="col-sm-12 list-group">
     <app-property-item
-      *ngFor="let propertyElement of properties"
+      *ngFor="let propertyElement of properties | async"
       [property]="propertyElement"
       (selectedProperty)="onSelectedProperty(propertyElement)"
     ></app-property-item>

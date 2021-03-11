@@ -8,6 +8,8 @@ import {ContactDetailsComponent} from "./contacts/contact-details/contact-detail
 import {PropertiesComponent} from "./properties/properties.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {PropertyDetailComponent} from "./properties/property-detail/property-detail.component";
+import {PropertyEditComponent} from "./properties/property-edit/property-edit.component";
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -18,7 +20,12 @@ const routes: Routes = [
       { path: ':id', component: ContactDetailsComponent },
       { path: ':id/edit', component: ContactEditComponent}
     ] },
-  { path: 'properties', component: PropertiesComponent },
+  { path: 'properties', component: PropertiesComponent, children: [
+      { path: '', component: PropertiesComponent },
+      { path: 'new', component: PropertyEditComponent },
+      { path: ':id', component: PropertyDetailComponent },
+      { path: ':id/edit', component: PropertyEditComponent }
+    ] },
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: 'not-found'}
 ];

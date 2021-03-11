@@ -23,7 +23,8 @@ export class MapService {
       center: [this.lng, this.lat],
       zoom: this.zoom
     })
-    this.map.addControl(new mapboxgl.NavigationControl());
+    this.map.addControl(
+      new mapboxgl.NavigationControl()
+    );
   }
-
 }
