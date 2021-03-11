@@ -7,6 +7,7 @@ import {Property} from "../../shared/models/property.model";
   styleUrls: ['./property-detail.component.sass']
 })
 export class PropertyDetailComponent implements OnInit {
+  show = false;
   @Input() property: Property;
 
   constructor() { }
