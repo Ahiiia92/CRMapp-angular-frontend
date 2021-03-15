@@ -38,11 +38,6 @@ export class ContactListComponent implements OnInit {
     this.contacts = this.contactService.getAll();
   }
 
-  onContactSelected(contact: Contact) {
-    this.contactWasSelected.emit(contact);
-    console.log('Contact was been selected! Contact-list Component');
-  }
-
   onNewContact() {
     this.router.navigate(['new'], {relativeTo: this.route});
   }

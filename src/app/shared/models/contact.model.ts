@@ -4,5 +4,5 @@ export class Contact {
   firstname: string;
   lastname: string;
   address: string;
-  job: string;
+  profession: string;
 }
