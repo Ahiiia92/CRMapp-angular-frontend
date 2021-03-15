@@ -28,8 +28,8 @@ export class ContactService {
     return this.http.post<Contact>(`${this.baseUrl}`, contact);
   }
 
-  update(id: number, contact: Contact) {
-    return this.http.put<Contact>(`${this.baseUrl}/${id}`, contact);
+  update(id: number, newContact: Contact) {
+    return this.http.put<Contact>(`${this.baseUrl}/${id}`, newContact);
   }
 
   delete(id: number): Observable<any> {

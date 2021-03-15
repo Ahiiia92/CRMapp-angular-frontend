@@ -9,6 +9,7 @@
     <p class="list-group-item-text mb-1">{{ contact.email }}</p>
   </div>
   <span class="pull-right">
-        <p class="list-group-item-text mb-1">{{ contact.job }}</p>
+        <p class="list-group-item-text mb-1 badge badge-success">{{ contact['contact_status'] }}</p>
+        <p class="list-group-item-text mb-1">{{ contact.profession }}</p>
   </span>
 </a>

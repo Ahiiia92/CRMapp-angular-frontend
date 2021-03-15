@@ -27,7 +27,6 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
           this.contact = new Contact();
           this.contactChangeSub = this.contactService.show(this.id)
             .subscribe(resData => {
-              console.log(resData);
               this.contact = resData;
             }, error => {
               console.log(error.message);
