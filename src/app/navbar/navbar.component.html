@@ -1,54 +1,54 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-  <div class="sidebar-sticky pt-3">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a [routerLink]="['dashboard']" [routerLinkActive]="'active'" class="nav-link">
-          Dashboard
-        </a>
-      </li>
-      <li class="nav-item">
-        <a [routerLink]="['contacts']" class="nav-link">
-          Contacts
-        </a>
-      </li>
-      <li class="nav-item">
-        <a [routerLink]="['properties']" class="nav-link">
-          Properties
-        </a>
-      </li>
-    </ul>
-    <br>
-    <!--        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">-->
-    <!--          <span>Saved reports</span>-->
-    <!--          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">-->
-    <!--            <span data-feather="plus-circle"></span>-->
-    <!--          </a>-->
-    <!--        </h6>-->
-    <!--        <ul class="nav flex-column mb-2">-->
-    <!--          <li class="nav-item">-->
-    <!--            <a class="nav-link" href="#">-->
-    <!--              <span data-feather="file-text"></span>-->
-    <!--              Current month-->
-    <!--            </a>-->
-    <!--          </li>-->
-    <!--          <li class="nav-item">-->
-    <!--            <a class="nav-link" href="#">-->
-    <!--              <span data-feather="file-text"></span>-->
-    <!--              Last quarter-->
-    <!--            </a>-->
-    <!--          </li>-->
-    <!--          <li class="nav-item">-->
-    <!--            <a class="nav-link" href="#">-->
-    <!--              <span data-feather="file-text"></span>-->
-    <!--              Social engagement-->
-    <!--            </a>-->
-    <!--          </li>-->
-    <!--          <li class="nav-item">-->
-    <!--            <a class="nav-link" href="#">-->
-    <!--              <span data-feather="file-text"></span>-->
-    <!--              Year-end sale-->
-    <!--            </a>-->
-    <!--          </li>-->
-    <!--        </ul>-->
+<!--  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">-->
+<!--    <div class="sidebar-sticky pt-3">-->
+<!--      <ul class="nav flex-column">-->
+<!--        <li class="nav-item">-->
+<!--          <a [routerLink]="['dashboard']" [routerLinkActive]="'active'" class="nav-link">-->
+<!--            Dashboard-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a [routerLink]="['contacts']" class="nav-link">-->
+<!--            Contacts-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a [routerLink]="['properties']" class="nav-link">-->
+<!--            Properties-->
+<!--          </a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--      <br>-->
+<!--    </div>-->
+<!--  </nav>-->
+
+<ejs-sidebar id="default-sidebar" #sidebar (created)="onCreated($event)" style="visibility: hidden" [enableGestures]="enableGestures" >
+  <div class="title"> Sidebar content</div>
+  <ul class="nav flex-column">
+            <li class="nav-item sub-title">
+              <a [routerLink]="['dashboard']" [routerLinkActive]="'active'" class="nav-link" (click)="toggleClick()">
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item sub-title">
+              <a [routerLink]="['contacts']" class="nav-link" (click)="toggleClick()">
+                Contacts
+              </a>
+            </li>
+            <li class="nav-item sub-title">
+              <a [routerLink]="['properties']" class="nav-link" (click)="toggleClick()">
+                Properties
+              </a>
+            </li>
+          </ul>
+  <div class="center-align">
+    <button ejs-button id="close" (click)="closeClick()" class="e-btn close-btn close">X</button>
   </div>
-</nav>
+</ejs-sidebar>
+<div>
+  <div style="padding:20px" class="center-align">
+    <button ejs-button id="toggle" class="navbar-toggler" type="button" (click)="toggleClick()">
+      <span class="navbar-toggler-icon">here</span>
+    </button>
+  </div>
+</div>
+<!--end of main content declaration -->

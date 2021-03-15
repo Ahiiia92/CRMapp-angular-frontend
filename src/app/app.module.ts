@@ -23,6 +23,7 @@ import { MapComponent } from './map/map.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {SidebarModule} from "@syncfusion/ej2-angular-navigations";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        SidebarModule
     ],
   providers: [ContactService],
   bootstrap: [AppComponent]
