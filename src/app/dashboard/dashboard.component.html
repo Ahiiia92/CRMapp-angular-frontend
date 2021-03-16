@@ -34,7 +34,7 @@
               <td>{{ contact.lastname }}</td>
               <td>{{ contact.email }}</td>
               <td>{{ contact.address }}</td>
-              <td class="badge badge-success p-2 m-auto align-items-center">{{ contact['contact_status'] }}</td>
+              <td class="m-auto align-items-center">{{ contact['contact_status'] }}</td>
               <td><a [routerLink]="['/contacts/' + contact.id]" [routerLinkActive]="'active'" >Show</a></td>
               <td><a [routerLink]="['/contacts/' + contact.id + '/edit']">Edit</a></td>
               <td>
