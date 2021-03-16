@@ -4,12 +4,5 @@
     ></app-property-list>
   </div>
   <div class="col-lg-12 mt-2 mt-lg-0 col-md-12 col-sm-12">
-    <app-property-detail
-    *ngIf="selectedProperty; else infoText"
-    [property]="selectedProperty"
-    ></app-property-detail>
-    <ng-template #infoText>
-      <div class="alert-info p-2">Sélectionner une propriété</div>
-    </ng-template>
-  </div>
+    <router-outlet></router-outlet>
 </div>
