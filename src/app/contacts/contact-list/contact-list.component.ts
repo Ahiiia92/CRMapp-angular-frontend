@@ -11,18 +11,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ContactListComponent implements OnInit {
   collapsed = false;
-  // contacts: Contact[] = [
-  //   new Contact('Marie', "Dujardin", '46 rue de la Paix, 95483 Paris', 'Architect'),
-  //   new Contact('Aya', "Dtzéch", '5 avenue MLK, 38920 Montpellier', 'Surgeon')
-  // ];
   @Output() contactWasSelected = new EventEmitter<Contact>();
-
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
-
-  // Link with BE
   contacts: Observable<Contact[]>;
 
   constructor(private contactService: ContactService,
@@ -30,15 +19,15 @@ export class ContactListComponent implements OnInit {
               private route: ActivatedRoute) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.reloadData();
-  }
-
-  reloadData() {
-    this.contacts = this.contactService.getAll();
   }
 
   onNewContact() {
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  private reloadData() {
+    this.contacts = this.contactService.getAll();
   }
 }
