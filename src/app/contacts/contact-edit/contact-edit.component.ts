@@ -56,8 +56,6 @@ export class ContactEditComponent implements OnInit {
         .subscribe((resData) => {
           this.contactForm.patchValue(resData);
           this.contact = this.contactForm.value;
-          console.log("This.contact: ");
-          console.log(this.contact);
         });
     }
 
