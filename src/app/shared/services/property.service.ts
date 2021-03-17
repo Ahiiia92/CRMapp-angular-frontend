@@ -22,4 +22,16 @@ export class PropertyService {
   showProperty(id): Observable<Property> {
     return this.http.get<Property>(`${this.baseUrl}/${id}`);
   }
+
+  save(property: Property) {
+    return this.http.post<Property>(`${this.baseUrl}`, property);
+  }
+
+  update(id: number, propertyToUpdate: Property) {
+    return this.http.put<Property>(`${this.baseUrl}/${id}`, propertyToUpdate);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${this.baseUrl}/${id}`, {responseType: "json"});
+  }
 }
