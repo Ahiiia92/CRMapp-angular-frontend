@@ -8,6 +8,12 @@ export class Contact implements Deserializable{
   lastname: string;
   address: string;
   profession: string;
+  phone: string;
+  sellingProject: boolean;
+  owner: boolean;
+  ambassador: boolean;
+  children: number;
+  ownerSince: string;
   comment: Comment;
 
   deserialize(input: any) {
