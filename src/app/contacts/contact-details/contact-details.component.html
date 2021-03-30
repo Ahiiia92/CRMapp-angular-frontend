@@ -35,16 +35,22 @@
 
 <div class="row">
   <div class="col-sm-12">
-    Email: <p>{{ contact.email }}</p>
-    Profession: <p>{{ contact.profession }}</p>
-    <p>{{ contact }}</p>
-    <p>{{ contact | json }}</p>
+    <p>Email: {{ contact.email }}</p>
+    <p>Phone: {{ contact.phone }}</p>
+    <p>Profession: {{ contact.profession }}</p>
+    <p>Children: {{ contact.children }}</p>
+    <p>Selling Project: {{ contact.sellingProject }}</p>
+    <p>Ambassador: {{ contact.ambassador }}</p>
+
+    <p *ngIf="contact.owner">Owner since: {{ contact.ownerSince }}</p>
+    Notes:
+    <p *ngFor="comment in comments">{{ contact.comment }}</p>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12">
-    Map
+    Map (to delete)
     <app-map></app-map>
   </div>
 </div>
