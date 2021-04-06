@@ -1,56 +1,58 @@
-<div class="row">
-  <div class="col-sm-12">
-    <img src="" alt="" class="img-responsive">
+<div class="contact-details-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <img src="" alt="" class="img-responsive">
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <div class="d-flex justify-content-between">
-      <div class="contact-subtitle">
-        <h1>{{ contact.firstname }} {{ contact.lastname }}</h1>
-        <h3>{{ contact.address }}</h3>
-      </div>
-      <div class="contact-subtitle text-right">
-        <h2 class="badge badge-success p-2 m-auto">{{ contact['contact_status'] }}</h2>
-        <h2>{{ contact.profession }}</h2>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="d-flex justify-content-between">
+        <div class="contact-subtitle">
+          <h1>{{ contact.firstname }} {{ contact.lastname }}</h1>
+          <h3>{{ contact.address }}</h3>
+        </div>
+        <div class="contact-subtitle text-right">
+          <h2 class="badge badge-success p-2 m-auto">{{ contact['contact_status'] }}</h2>
+          <h2>{{ contact.profession }}</h2>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <div appDropdown class="btn-group mb-2" id="dropdownBtn" (click)="show = !show">
-      <button class="btn btn-primary dropdown-toggle" aria-expanded="false">
-        Manage Contact <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" [class.show]="show">
-        <li class="ml-2"><a (click)="onEditContact()" style="cursor: pointer;">Edit Contact</a></li>
-        <li class="ml-2"><a (click)="onDeleteContact(+contact.id)" style="cursor: pointer;">Delete Contact</a></li>
-      </ul>
+  <div class="row">
+    <div class="col-sm-12">
+      <div appDropdown class="btn-group mb-2" id="dropdownBtn" (click)="show = !show">
+        <button class="btn btn-primary dropdown-toggle" aria-expanded="false">
+          Manage Contact <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" [class.show]="show">
+          <li class="ml-2"><a (click)="onEditContact()" style="cursor: pointer;">Edit Contact</a></li>
+          <li class="ml-2"><a (click)="onDeleteContact(+contact.id)" style="cursor: pointer;">Delete Contact</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <p>Email: {{ contact.email }}</p>
-    <p>Phone: {{ contact.phone }}</p>
-    <p>Profession: {{ contact.profession }}</p>
-    <p>Children: {{ contact.children }}</p>
-    <p>Selling Project: {{ contact.sellingProject }}</p>
-    <p>Ambassador: {{ contact.ambassador }}</p>
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Email: {{ contact.email }}</p>
+      <p>Phone: {{ contact.phone }}</p>
+      <p>Profession: {{ contact.profession }}</p>
+      <p>Children: {{ contact.children }}</p>
+      <p>Selling Project: {{ contact.sellingProject }}</p>
+      <p>Ambassador: {{ contact.ambassador }}</p>
 
-    <p *ngIf="contact.owner">Owner since: {{ contact.ownerSince }}</p>
-    Notes:
-    <p *ngFor="comment in comments">{{ contact.comment }}</p>
+      <p *ngIf="contact.owner">Owner since: {{ contact.ownerSince }}</p>
+      Notes:
+      <p *ngFor="comment in comments">{{ contact.comment }}</p>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-12">
-    Map (to delete)
-    <app-map></app-map>
+  <div class="row">
+    <div class="col-sm-12">
+      Map (to delete)
+  <!--    <app-map></app-map>-->
+    </div>
   </div>
 </div>
