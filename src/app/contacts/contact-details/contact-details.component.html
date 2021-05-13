@@ -45,6 +45,7 @@
 
       <p *ngIf="contact.owner">Owner since: {{ contact.ownerSince }}</p>
       Notes:
+      <app-viewings></app-viewings>
       <p *ngFor="comment in comments">{{ contact.comment }}</p>
     </div>
   </div>
