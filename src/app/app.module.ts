@@ -24,6 +24,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SidebarModule} from "@syncfusion/ej2-angular-navigations";
+import { ViewingsComponent } from './viewings/viewings.component';
+import { ViewingListComponent } from './viewings/viewing-list/viewing-list.component';
+import { ViewingDetailsComponent } from './viewings/viewing-details/viewing-details.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import {SidebarModule} from "@syncfusion/ej2-angular-navigations";
     PropertyEditComponent,
     MapComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    ViewingsComponent,
+    ViewingListComponent,
+    ViewingDetailsComponent
   ],
     imports: [
         BrowserModule,
