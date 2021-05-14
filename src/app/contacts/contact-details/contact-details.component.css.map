@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,0BAA0B,CAAC;EACzB,gBAAgB,EAAE,OAAO;EACzB,OAAO,EAAE,SAAS;EAClB,aAAa,EAAE,GAAG;CAAG;;AAEvB,AACE,iBADe,CACf,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;CAAG;;AAFtB,AAGE,iBAHe,CAGf,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;CAAG;;AAJtB,AAKE,iBALe,CAKf,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;CAAG;;AAEtB,AACE,UADQ,CACR,CAAC,CAAC;EACA,SAAS,EAAE,IAAI;CAAG",
+    "sources": [
+        "contact-details.component.sass"
+    ],
+    "names": [],
+    "file": "contact-details.component.css"
+}

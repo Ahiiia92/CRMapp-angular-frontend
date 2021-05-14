@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "property-detail.component.sass"
+    ],
+    "names": [],
+    "file": "property-detail.component.css"
+}

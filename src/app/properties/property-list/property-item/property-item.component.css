@@ -1,0 +1,43 @@
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 !important;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  height: 100%;
+}
+/*# sourceMappingURL=property-item.component.css.map */
