@@ -42,18 +42,10 @@
       <p>Children: {{ contact.children }}</p>
       <p>Selling Project: {{ contact.sellingProject }}</p>
       <p>Ambassador: {{ contact.ambassador }}</p>
-
+      <p>Owner: {{ contact.owner }}</p>
       <p *ngIf="contact.owner">Owner since: {{ contact.ownerSince }}</p>
-      Notes:
       <app-viewings></app-viewings>
       <p *ngFor="comment in comments">{{ contact.comment }}</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12">
-      Map (to delete)
-  <!--    <app-map></app-map>-->
     </div>
   </div>
 </div>

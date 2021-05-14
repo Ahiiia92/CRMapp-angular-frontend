@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,YAAY,EAAE,eAAe;CAAG;;AAElC,AAAA,mBAAmB,CAAC;EAChB,SAAS,EAAE,cAAc;CAAG",
+    "sources": [
+        "property-list.component.sass"
+    ],
+    "names": [],
+    "file": "property-list.component.css"
+}

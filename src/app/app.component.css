@@ -1,0 +1,20 @@
+.container-app {
+  width: 100% !important;
+}
+
+footer .container-footer {
+  font-size: 12px !important;
+  text-align: center !important;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+/*# sourceMappingURL=app.component.css.map */
