@@ -10,6 +10,10 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {PropertyDetailComponent} from "./properties/property-detail/property-detail.component";
 import {PropertyEditComponent} from "./properties/property-edit/property-edit.component";
+import { ViewingsComponent } from './viewings/viewings.component';
+import { ViewingDetailsComponent } from './viewings/viewing-details/viewing-details.component';
+import { Viewing } from './shared/models/viewing.model';
+import { ViewingEditComponent } from './viewings/viewing-edit/viewing-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
@@ -26,6 +30,12 @@ const routes: Routes = [
       { path: ':id', component: PropertyDetailComponent },
       { path: ':id/edit', component: PropertyEditComponent }
     ] },
+  { path: 'viewings', component: ViewingsComponent, children: [
+      { path: '', component: ViewingsComponent },
+      { path: 'new', component: ViewingEditComponent },
+      { path: ':id', component: ViewingDetailsComponent },
+      { path: ':id/edit', component: ViewingEditComponent }
+  ] },
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: 'not-found'}
 ];
