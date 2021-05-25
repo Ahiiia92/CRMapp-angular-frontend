@@ -27,6 +27,7 @@ import {SidebarModule} from "@syncfusion/ej2-angular-navigations";
 import { ViewingsComponent } from './viewings/viewings.component';
 import { ViewingListComponent } from './viewings/viewing-list/viewing-list.component';
 import { ViewingDetailsComponent } from './viewings/viewing-details/viewing-details.component';
+import { ViewingEditComponent } from './viewings/viewing-edit/viewing-edit.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ViewingDetailsComponent } from './viewings/viewing-details/viewing-deta
     NavbarComponent,
     ViewingsComponent,
     ViewingListComponent,
-    ViewingDetailsComponent
+    ViewingDetailsComponent,
+    ViewingEditComponent
   ],
     imports: [
         BrowserModule,
