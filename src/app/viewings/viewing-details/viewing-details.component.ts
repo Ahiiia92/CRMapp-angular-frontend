@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Viewing } from 'src/app/shared/models/viewing.model';
 import { ViewingService } from 'src/app/shared/services/viewing.service';
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class ViewingDetailsComponent implements OnInit, OnDestroy {
   viewing: Viewing;
-  show: false;
+  show = false;
   id: number;
   private viewingChangeSub: Subscription;
 
