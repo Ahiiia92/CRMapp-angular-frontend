@@ -4,7 +4,9 @@
   </div>
   <div class="card-viewing">
     <app-viewing-list
-      *ngFor=""
+      *ngFor="let viewingElement of viewings | async; let i = identifier"
+      [viewing]="viewingElement"
+      [identifier]="i"
     ></app-viewing-list>
     <app-viewing-details></app-viewing-details>
   </div>

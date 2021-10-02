@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Viewing } from '../../shared/models/viewing.model';
 
 @Component({
   selector: 'app-viewing-list',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewing-list.component.sass']
 })
 export class ViewingListComponent implements OnInit {
-
+  @Input() viewing: Viewing;
+  @Input() identifier: number;
   constructor() { }
 
   ngOnInit(): void {
