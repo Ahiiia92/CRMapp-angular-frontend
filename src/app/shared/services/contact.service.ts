@@ -35,4 +35,8 @@ export class ContactService {
   delete(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text'});
   }
+
+  export(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/export/excel`, { responseType: 'text'});
+  }
 }
