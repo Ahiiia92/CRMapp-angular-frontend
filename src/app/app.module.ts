@@ -28,6 +28,7 @@ import { ViewingsComponent } from './viewings/viewings.component';
 import { ViewingListComponent } from './viewings/viewing-list/viewing-list.component';
 import { ViewingDetailsComponent } from './viewings/viewing-details/viewing-details.component';
 import { ViewingEditComponent } from './viewings/viewing-edit/viewing-edit.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ViewingEditComponent } from './viewings/viewing-edit/viewing-edit.compo
     ViewingsComponent,
     ViewingListComponent,
     ViewingDetailsComponent,
-    ViewingEditComponent
+    ViewingEditComponent,
+    LoginComponentComponent
   ],
     imports: [
         BrowserModule,

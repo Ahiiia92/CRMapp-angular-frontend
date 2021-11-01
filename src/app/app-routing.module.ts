@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponentComponent } from './login-component/login-component.component';
 import {HomepageComponent} from "./homepage/homepage.component";
 import {ContactsComponent} from "./contacts/contacts.component";
 import {ContactStartComponent} from "./contacts/contact-start/contact-start.component";
@@ -17,6 +18,7 @@ import { ViewingEditComponent } from './viewings/viewing-edit/viewing-edit.compo
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponentComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'contacts', component: ContactsComponent, children: [
       { path: '', component: ContactStartComponent },
