@@ -37,6 +37,6 @@ export class ContactService {
   }
 
   export(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/export/excel`, { responseType: 'text'});
+    return this.http.get(`${this.baseUrl}/export/excel`);
   }
 }
