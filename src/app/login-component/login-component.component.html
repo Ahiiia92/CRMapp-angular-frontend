@@ -1,21 +1,53 @@
 <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-  <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-    <label for="username">Username</label>
-    <input type="text"
-           name="username" [(ngModel)]="user.username"
-           #username="ngModel" required />
-    <div *ngIf="f.submitted
-          && !username.valid">Username is required</div>
+<section class="vh-100" style="background-color: #508bfc;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-5">Sign in</h3>
+
+            <div [ngClass]="{ 'has-error': f.submitted && !username.valid }" class="form-outline mb-4">
+              <input type="text"
+                     name="username" [(ngModel)]="user.username"
+                     class="form-control form-control-lg"
+                     #username="ngModel" required />
+              <label class="form-label" for="username">Username</label>
+              <div *ngIf="f.submitted && !username.valid">Username is required</div>
+            </div>
+
+            <div [ngClass]="{ 'has-error': f.submitted && !password.valid }" class="form-outline mb-4">
+              <input type="password"
+                     name="password" [(ngModel)]="user.password"
+                     class="form-control form-control-lg"
+                     #password="ngModel" required />
+              <label class="form-label" for="password">Password</label>
+              <div *ngIf="f.submitted && !password.valid">Password is required</div>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-start mb-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="form1Example3"
+              />
+              <label class="form-check-label" for="form1Example3"> Remember password </label>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+            <hr class="my-4">
+
+            <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;" type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
+            <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;" type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-    <label for="password">Password</label>
-    <input type="password"
-           name="password" [(ngModel)]="user.password"
-           #password="ngModel" required />
-    <div *ngIf="f.submitted
-          && !password.valid">Password is required</div>
-  </div>
-  <div>
-    <button [disabled]="">Login</button>
-  </div>
+</section>
 </form>
