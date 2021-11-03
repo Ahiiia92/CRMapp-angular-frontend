@@ -23,6 +23,7 @@ export class LoginComponentComponent implements OnInit {
   }
 
   login() {
+
     let url = "localhost:8088/login";
     let result = this.httpClient.post(url, {
                      username: this.user.username,
