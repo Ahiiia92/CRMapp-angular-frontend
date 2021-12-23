@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactDetailsComponent } from './contacts/contact-details/contact-details.component';
@@ -29,6 +28,7 @@ import { ViewingListComponent } from './viewings/viewing-list/viewing-list.compo
 import { ViewingDetailsComponent } from './viewings/viewing-details/viewing-details.component';
 import { ViewingEditComponent } from './viewings/viewing-edit/viewing-edit.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,8 @@ import { LoginComponentComponent } from './login-component/login-component.compo
         HttpClientModule,
         ReactiveFormsModule,
         FormsModule,
-        SidebarModule
+        SidebarModule,
+        FontAwesomeModule
     ],
   providers: [ContactService],
   bootstrap: [AppComponent]
