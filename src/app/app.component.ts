@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {SidebarComponent} from "@syncfusion/ej2-angular-navigations";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import {SidebarComponent} from "@syncfusion/ej2-angular-navigations";
 export class AppComponent {
   title = 'CRM App';
   loadedFeature = 'contact';
+  faGithub = faGithub;
   @ViewChild('sidebar') sidebar : SidebarComponent;
   public enableGestures: boolean = false;
   public type: string = 'Push';
