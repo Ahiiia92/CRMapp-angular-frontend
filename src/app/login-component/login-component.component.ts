@@ -28,22 +28,20 @@ export class LoginComponentComponent implements OnInit {
   }
 
   login() {
-
-    let url = "localhost:8088/login";
+    let url = "http://localhost:8088/login";
     let result = this.httpClient.post(url, {
-                     username: this.user.username,
-                     password: this.user.password
-                 }).subscribe(isValid => {
-                     if (isValid) {
-                         sessionStorage.setItem(
-                           'token',
-                           btoa(this.user.username + ':' + this.user.password)
-                         );
-                 	this.router.navigate(['']);
-                     } else {
-                         alert("Authentication failed.")
-                     }
-                 });
-  }
-
+           username: this.user.username,
+           password: this.user.password
+       }).subscribe(isValid => {
+           if (isValid) {
+               sessionStorage.setItem(
+                 'token',
+                 btoa(this.user.username + ':' + this.user.password)
+               );
+        this.router.navigate(['']);
+           } else {
+               alert("Authentication failed.")
+           }
+       });
+    }
 }
