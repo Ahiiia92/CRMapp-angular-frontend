@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {Injectable, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +13,8 @@ import { PropertiesComponent } from './properties/properties.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
 import {ContactService} from "./shared/services/contact.service";
-import {HttpClientModule} from "@angular/common/http";
+import {AppService} from "./shared/services/app.service";
+import {HTTP_INTERCEPTORS, HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactStartComponent } from './contacts/contact-start/contact-start.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -56,16 +57,29 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ViewingEditComponent,
     LoginComponentComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        FormsModule,
-        SidebarModule,
-        FontAwesomeModule
-    ],
-  providers: [ContactService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    SidebarModule,
+    FontAwesomeModule
+  ],
+  providers: [AppService, ContactService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
+
+@Injectable()
+export class XhrInterceptor implements HttpInterceptor {
+
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    const xhr = req.clone({
+      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+    });
+    return next.handle(xhr);
+  }
+}
+
 export class AppModule { }
+
