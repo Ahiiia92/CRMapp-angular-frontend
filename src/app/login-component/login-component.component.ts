@@ -28,6 +28,8 @@ export class LoginComponentComponent implements OnInit {
     this.app.authenticate(undefined, undefined);
   }
 
+  authenticated() { return this.app.authenticated; }
+
   ngOnInit(): void {
     sessionStorage.setItem('token', '');
   }
@@ -49,10 +51,10 @@ export class LoginComponentComponent implements OnInit {
            }
        });
     }
-  logout() {
-    this.httpClient.post('logout', {}).finally(() => {
-      this.app.authenticated = false;
-      this.router.navigateByUrl('/login');
-    }).subscribe();
-  }
+  // logout() {
+  //   this.httpClient.post('logout', {}).finally(() => {
+  //     this.app.authenticated = false;
+  //     this.router.navigateByUrl('/login');
+  //   }).subscribe();
+  // }
 }
