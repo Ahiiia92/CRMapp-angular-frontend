@@ -36,19 +36,23 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](./Screenshot-homepage.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+For this project, I started to investigate how to build a full-stack web application with a Spring Boot backend and an Angular Frontend.
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+- The demo is available at: https://re-crmapp.web.app/
+- **What was your experience?**
+  I build the backand and the frontend at the same time, while I was learning Angular.
+- **What have you learned/improved?**
+  If I should reproduce the experience, I would first, focus on the backend. Then on the Frontend. Plus do some refactoring more regularly.
+- **Thoughts:**
+  I have difficulties with Sprint Boot Security and the front/backend connexion due to a CORS error in the frontend. Need to investigate this further.
 
 ## How To Use
 ### Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You would need to fork and clone both repo: backend (current Repo) and frontend (https://github.com/Ahiiia92/CRMapp-angular-frontend).
+Then run `mvn spring-boot:run` to run the Spring Boot app and  `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ### Code scaffolding
 
@@ -61,6 +65,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+=> I didn't go into Frontend Testing yet. Currently are the default tests case generated with the components.
 
 ### Running end-to-end tests
 
@@ -72,30 +77,25 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Built With
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
-
-- [Java](#)
-- [Spring Boot](#)
-- [Typescript](#)
-- PostgreSQL
+- Java
+- Spring Boot
+- [PostgreSQL](https://www.postgresql.org/)
 - [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+- The Frontend is hosted on [Firebase](https://firebase.google.com/)
+- The Backend is hosted on [Heroku](https://firebase.google.com/)
 
 ## Features
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
 This application frontend was created as a real estate solution to ease pre-sales processes.
 
-It enables real estate agent to manager their contacts.
+It enables real estate agent to manage their contacts.
 
 
 ## Acknowledgements
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+- [Udemy Course - Angular](https://www.udemy.com/course/the-complete-guide-to-angular-2)
+- [Udemy Course - Java Spring Boot](https://www.udemy.com/course/spring-framework-5-beginner-to-guru/)
+- FDM Java Training
 
 ## Contact
 
