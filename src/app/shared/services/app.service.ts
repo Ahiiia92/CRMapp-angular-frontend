@@ -1,23 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { User} from '../models/user.model';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
-    private baseUrl = `${environment.apiUrl}`;
-    user: User;
-    authenticated = false;
-    credentials = {username: '', password: ''};
+export class AppService {
 
-  constructor(private http: HttpClient) {
-        this.baseUrl = `${environment.apiUrl}/`;
-  }
+  authenticated = false;
+  constructor(private http: HttpClient) { }
 
   authenticate(credentials, callback) {
+
     const headers = new HttpHeaders(credentials ? {
       authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
     } : {});
@@ -30,9 +23,5 @@ export class LoginService {
       }
       return callback && callback();
     });
-  }
-
-  login(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/login`);
   }
 }

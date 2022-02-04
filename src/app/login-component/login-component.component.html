@@ -1,4 +1,8 @@
-<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" class="unauthenticated" novalidate>
+<div [hidden]="!authenticated()">
+  <h1>Greeting</h1>
+  <p>Salut toi!</p>
+</div>
+<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" class="unauthenticated" [hidden]="authenticated()" novalidate>
 <section class="vh-100" style="background-color: #508bfcb0;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
