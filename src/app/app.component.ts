@@ -30,4 +30,5 @@ export class AppComponent {
   toggleClick(): void {
     this.sidebar.toggle();
   }
+
 }

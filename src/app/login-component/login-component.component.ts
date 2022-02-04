@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {User} from "../shared/models/user.model";
+import {LoginService} from "../shared/services/login.service";
 import { faGithub, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import {AppService} from "../shared/services/app.service";
 
 
 
@@ -18,10 +20,15 @@ export class LoginComponentComponent implements OnInit {
   faGithub = faGithub;
 
   constructor(
+    private app: AppService,
     private route: ActivatedRoute,
     private router: Router,
     private httpClient: HttpClient
-  ) { }
+  ) {
+    this.app.authenticate(undefined, undefined);
+  }
+
+  authenticated() { return this.app.authenticated; }
 
   ngOnInit(): void {
     sessionStorage.setItem('token', '');
@@ -44,4 +51,10 @@ export class LoginComponentComponent implements OnInit {
            }
        });
     }
+  // logout() {
+  //   this.httpClient.post('logout', {}).finally(() => {
+  //     this.app.authenticated = false;
+  //     this.router.navigateByUrl('/login');
+  //   }).subscribe();
+  // }
 }
