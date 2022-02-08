@@ -23,12 +23,12 @@ export class ApiService {
    * @param formData as the login form data
    */
 
-  login(formData:any):Observable<HttpResponse<Response>> {
-    return this.http.post<Response>(this.endPoint+"login", formData,{ observe: 'response'})
+  login(formData:any):Observable<HttpResponse<any>>{
+    return this.http.post<any>(this.endPoint+"login",formData,  { observe: 'response' })
       .pipe(
-        tap((resp: HttpResponse<Response>) => {
-          if(resp.headers.get('x-auth')) {
-            this.cookieService.set("currentUser", resp.headers.get('x-auth'));
+        tap((resp: HttpResponse<any>) => {
+          if(resp.body.token){
+            this.cookieService.set("currentUser",resp.headers.get('x-auth'));
             this.loginStatus.next(true);
           }
           return resp;

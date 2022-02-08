@@ -5,7 +5,8 @@ import {User} from "../shared/models/user.model";
 import {LoginService} from "../shared/services/login.service";
 import { faGithub, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import {AppService} from "../shared/services/app.service";
-
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ApiService} from "../auth/api.service";
 
 
 @Component({
@@ -18,43 +19,35 @@ export class LoginComponentComponent implements OnInit {
   faFacebook = faFacebook;
   faGoogle = faGoogle;
   faGithub = faGithub;
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
+  })
+  public loginError: string;
 
   constructor(
     private app: AppService,
     private route: ActivatedRoute,
     private router: Router,
-    private httpClient: HttpClient
-  ) {
-    this.app.authenticate(undefined, undefined);
-  }
+    private httpClient: HttpClient,
+    private apiService: ApiService
+  ) {}
 
-  authenticated() { return this.app.authenticated; }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    sessionStorage.setItem('token', '');
-  }
-
-  login() {
-    let url = "http://localhost:8088/login";
-    let result = this.httpClient.post(url, {
-           username: this.user.username,
-           password: this.user.password
-       }).subscribe(isValid => {
-           if (isValid) {
-               sessionStorage.setItem(
-                 'token',
-                 btoa(this.user.username + ':' + this.user.password)
-               );
-        this.router.navigate(['']);
-           } else {
-               alert("Authentication failed.")
-           }
-       });
+  onSubmit() {
+    if(this.loginForm.valid) {
+      this.apiService.login(this.loginForm.value)
+        .subscribe((data) => {
+          console.log(data);
+          if(data.status === 200 && !data.body.statusText) {
+            this.router.navigate(['/']);
+          } else {
+            this.loginError = data.body.statusText;
+          }
+        },
+          error => this.loginError = error
+        )
     }
-  // logout() {
-  //   this.httpClient.post('logout', {}).finally(() => {
-  //     this.app.authenticated = false;
-  //     this.router.navigateByUrl('/login');
-  //   }).subscribe();
-  // }
+  }
 }

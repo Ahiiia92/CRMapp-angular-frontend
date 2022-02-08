@@ -12,14 +12,12 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
 import { PropertiesComponent } from './properties/properties.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
-import {ContactService} from "./shared/services/contact.service";
-import {AppService} from "./shared/services/app.service";
-import {HTTP_INTERCEPTORS, HttpClientModule, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
+import { AppService } from "./shared/services/app.service";
+import { HttpClientModule} from "@angular/common/http";
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactStartComponent } from './contacts/contact-start/contact-start.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PropertyEditComponent } from './properties/property-edit/property-edit.component';
-import { MapComponent } from './map/map.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -48,7 +46,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContactStartComponent,
     PageNotFoundComponent,
     PropertyEditComponent,
-    MapComponent,
     DashboardComponent,
     NavbarComponent,
     ViewingsComponent,
@@ -66,20 +63,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidebarModule,
     FontAwesomeModule
   ],
-  providers: [ContactService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 
-@Injectable()
-export class XhrInterceptor implements HttpInterceptor {
-
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const xhr = req.clone({
-      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
-    });
-    return next.handle(xhr);
-  }
-}
 
 export class AppModule { }
 
