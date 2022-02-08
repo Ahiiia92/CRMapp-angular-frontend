@@ -6892,6 +6892,13 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ngx-cookie-service@^13.1.2:
+  version "13.1.2"
+  resolved "https://registry.yarnpkg.com/ngx-cookie-service/-/ngx-cookie-service-13.1.2.tgz#31dbd523e16765649661e36cb436d8f19bd9ea4b"
+  integrity sha512-CInzm1xjI51QA1gCJEnqfDFLnN7w/SzqM5+kGdpI+UiCeHKgYEXpKG1s7lFz4jbLDrL/jHKtrf92t7RGsm66Cg==
+  dependencies:
+    tslib "^2.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

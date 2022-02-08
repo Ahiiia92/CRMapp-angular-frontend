@@ -1,8 +1,4 @@
-<div [hidden]="!authenticated()">
-  <h1>Greeting</h1>
-  <p>Salut toi!</p>
-</div>
-<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" class="unauthenticated" [hidden]="authenticated()" novalidate>
+<form name="form" (ngSubmit)="onSubmit()" #f="ngForm" class="unauthenticated" novalidate>
 <section class="vh-100" style="background-color: #508bfcb0;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -11,6 +7,7 @@
           <div class="card-body p-5 text-center">
 
             <h3 class="mb-5">Sign in</h3>
+            <p *ngIf="loginError">{{loginError}}</p>
 
             <div [ngClass]="{ 'has-error': f.submitted && !username.valid }" class="form-outline mb-4">
               <input type="text"
@@ -18,7 +15,7 @@
                      class="form-control form-control-lg"
                      #username="ngModel" required />
               <label class="form-label" for="username">Username</label>
-              <div *ngIf="f.submitted && !username.valid">Username is required</div>
+              <div *ngIf="f.submitted && !loginForm.controls.email.valid">Username is required</div>
             </div>
 
             <div [ngClass]="{ 'has-error': f.submitted && !password.valid }" class="form-outline mb-4">
@@ -27,7 +24,7 @@
                      class="form-control form-control-lg"
                      #password="ngModel" required />
               <label class="form-label" for="password">Password</label>
-              <div *ngIf="f.submitted && !password.valid">Password is required</div>
+              <div *ngIf="f.submitted && !loginForm.controls.password.valid">Password is required</div>
             </div>
 
             <!-- Checkbox -->
