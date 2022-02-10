@@ -13,7 +13,7 @@ import { PropertiesComponent } from './properties/properties.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
 import { AppService } from "./shared/services/app.service";
-import { HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactStartComponent } from './contacts/contact-start/contact-start.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -28,6 +28,10 @@ import { ViewingDetailsComponent } from './viewings/viewing-details/viewing-deta
 import { ViewingEditComponent } from './viewings/viewing-edit/viewing-edit.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {CookieService} from "ngx-cookie-service";
+import {ApiService} from "./auth/api.service";
+import {ApiInterceptor} from "./auth/api.interceptor";
+import {ContactService} from "./shared/services/contact.service";
 
 @NgModule({
   declarations: [
@@ -63,7 +67,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidebarModule,
     FontAwesomeModule
   ],
-  providers: [AppService],
+  providers: [ContactService, ApiService, CookieService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ApiInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 
