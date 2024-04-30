@@ -16,6 +16,7 @@ speed-measure-plugin*.json
 
 # api keys
 .env
+.env.local
 
 # IDEs and editors
 /.idea
