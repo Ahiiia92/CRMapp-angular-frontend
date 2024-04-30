@@ -21,6 +21,7 @@ export class LoginComponentComponent implements OnInit {
   faGithub = faGithub;
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl( '',[Validators.required]),
     password: new FormControl('', [Validators.required])
   })
   public loginError: string;

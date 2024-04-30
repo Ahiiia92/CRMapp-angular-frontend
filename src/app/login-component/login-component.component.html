@@ -1,4 +1,4 @@
-<form name="form" (ngSubmit)="onSubmit()" #f="ngForm" class="unauthenticated" novalidate>
+<form name="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" #f="ngForm" class="unauthenticated" novalidate>
 <section class="vh-100" style="background-color: #508bfcb0;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -11,18 +11,20 @@
 
             <div [ngClass]="{ 'has-error': f.submitted && !username.valid }" class="form-outline mb-4">
               <input type="text"
-                     name="username" [(ngModel)]="user.username"
                      class="form-control form-control-lg"
-                     #username="ngModel" required />
+                     formControlName="username"
+                     required />
+              <input name="username" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}">
               <label class="form-label" for="username">Username</label>
               <div *ngIf="f.submitted && !loginForm.controls.email.valid">Username is required</div>
             </div>
 
             <div [ngClass]="{ 'has-error': f.submitted && !password.valid }" class="form-outline mb-4">
               <input type="password"
-                     name="password" [(ngModel)]="user.password"
                      class="form-control form-control-lg"
-                     #password="ngModel" required />
+                     formControlName="password"
+                     required />
+              <input name="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
               <label class="form-label" for="password">Password</label>
               <div *ngIf="f.submitted && !loginForm.controls.password.valid">Password is required</div>
             </div>
